@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ site_name }} - Oeuvres{% endblock %}
+
+{% block content %}
+    {% for category in categories %}
+        <div class="row">
+            <div class="col">
+                <h1>{{ category.name }}</h1>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for oeuvre in category.oeuvres %}
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <a href="{{ url('oeuvre.details', { id: oeuvre.id }) }}">
+                            <img src="{{ oeuvre.image }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ oeuvre.name }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Expositions prévues{% endblock %}
+
+{% block content %}
+
+    <div class="col">
+        <h1>Les expositions prévues prochainement : </h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for expo in expositions %}
+                    <tr>
+                        <td>{{expo.name}}</td>
+                        <td>{{ expo.date | date('Y/m/d') }}</td>
+                        <td>{{ expo.description }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pastExpo in pastExpositions %}
+                        <tr>
+                            <td>{{pastExpo.name}}</td>
+                            <td>{{ pastExpo.date | date('Y/m/d') }}<</td>
+                            <td>{{ pastExpo.description }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}

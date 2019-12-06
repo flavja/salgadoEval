@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - {{ result.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{{ result.image }}" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-9">
+            <h3>{{ result.name }}</h3>
+            <p>{{ result.description }}</p>
+        </div>
+    </div>
+{% endblock %}
