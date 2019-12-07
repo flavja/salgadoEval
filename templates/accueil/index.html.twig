@@ -3,6 +3,7 @@
 {% block title %}{{parent()}} - Accueil {% endblock %}
 
 {% block content %}
+    <div class="row">
     <div class="col">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -32,6 +33,14 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Suivant</span>
             </a>
+        </div>
+    </div>
+    </div>
+    <div class="row" style="margin: 10px;">
+        <div class="col">
+            <img src="https://www.lemonde.fr/blog/lunettesrouges/files/2013/05/IMG_5446-530x438.jpg" class="rounded float-left" alt="Tito">
+            <p>Sur cette photo, nous pouvons apercevoir le célèbre Tito Salgado, propriétaire de ce site et des oeuvres qui y sont affichées</p>
+
         </div>
     </div>
 {% endblock %}

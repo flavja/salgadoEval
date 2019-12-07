@@ -10,8 +10,9 @@
             <img src="{{ result.image }}" class="img-fluid" alt="">
         </div>
         <div class="col-sm-9">
-            <h3>{{ result.name }}</h3>
+            <h3>Nom : {{ result.name }}</h3>
             <p>{{ result.description }}</p>
         </div>
     </div>
+    <input class="btn btn-primary" type="button" value="Retour" onclick="history.go(-1)"/>
 {% endblock %}

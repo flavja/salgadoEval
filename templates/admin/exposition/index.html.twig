@@ -1,8 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.base.html.twig' %}
 
 {% block title %}{{ parent() }} - Expositions prévues{% endblock %}
 
 {% block content %}
+    {% include 'inc/flash.message.html.twig' %}
+
+
+    <div class="col-4 align-self-center">
+        <a href="{{ url('admin.exposition.form') }}" class="btn btn-primary">Prévoir une nouvelle exposition</a>
+    </div>
+
 
     <div class="col">
         <h1>Les expositions prévues prochainement : </h1>
@@ -20,13 +27,13 @@
                         <td>{{expo.name}}</td>
                         <td>{{ expo.date | date('Y/m/d') }}</td>
                         <td>{{ expo.description }}</td>
+
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 
-    {% if is_granted('ROLE_ADMIN') %}
         <div class="col">
             <h1>Les expositions passées : </h1>
             <table class="table table-striped">
@@ -41,12 +48,11 @@
                     {% for pastExpo in pastExpositions %}
                         <tr>
                             <td>{{pastExpo.name}}</td>
-                            <td>{{ pastExpo.date | date('Y/m/d') }}<</td>
+                            <td>{{ pastExpo.date | date('Y/m/d') }}</td>
                             <td>{{ pastExpo.description }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-    {% endif %}
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "admin.base.html.twig" %}
+
+{% block content %}
+    <h1 class="h1">Espace administration de Tito SALGADO</h1>
+    <div class="row my-3 text-center">
+        <div class="col-6">
+            <h5 class="card-title">Administration des oeuvres :  </h5>
+            <a href="{{ url('admin.oeuvre.index') }}" class="btn btn-primary">Consulter</a>
+
+        </div>
+        <div class="col-6">
+            <h5 class="card-title">Administration des expositions :  </h5>
+            <a href="{{ url('admin.exposition.index') }}" class="btn btn-primary">Consulter</a>
+        </div>
+    </div>
+
+{% endblock %}

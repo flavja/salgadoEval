@@ -8,7 +8,7 @@
         <h1>Contactez nous pour toute demande</h1>
         {{ form_start(form, { attr : { novalidate: 'novalidate' } }) }}
         <p>
-            {{ form_label(form.name, 'NON Prénom: ') }}
+            {{ form_label(form.name, 'NOM Prénom: ') }}
             {{ form_widget(form.name) }}
         </p>
         <p>
@@ -21,7 +21,7 @@
         </p>
         </p>
         <p>
-            <input type="submit" value="Valider" class="btn btn-primary">
+            <input value="Valider" class="btn btn-primary">
         </p>
         {{ form_end(form) }}
     </div>
